@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnt4ah0agpbus"]
+
+[ext_resource type="Script" uid="uid://cxn2ddniv2iec" path="res://Scenes/TitleScreen/DifficultySelect/DifficultySelect.gd" id="1_p1tlc"]
+[ext_resource type="Script" uid="uid://j038wyo4fvl5" path="res://Scenes/TitleScreen/DifficultySelect/DifficultySelectButton.gd" id="2_bufhl"]
+
+[node name="DifficultySelect" type="Node2D"]
+script = ExtResource("1_p1tlc")
+
+[node name="Hard" type="Button" parent="."]
+offset_left = 764.0
+offset_top = 686.0
+offset_right = 1164.0
+offset_bottom = 786.0
+text = "Hard
+"
+script = ExtResource("2_bufhl")
+
+[node name="Easy" type="Button" parent="."]
+offset_left = 762.0
+offset_top = 405.0
+offset_right = 1162.0
+offset_bottom = 505.0
+text = "Easy"
+script = ExtResource("2_bufhl")
+
+[node name="Medium" type="Button" parent="."]
+offset_left = 760.0
+offset_top = 550.0
+offset_right = 1160.0
+offset_bottom = 650.0
+text = "Medium"
+script = ExtResource("2_bufhl")
+
+[node name="Back" type="Button" parent="."]
+offset_right = 115.0
+offset_bottom = 42.0
+text = "^Back"
+script = ExtResource("2_bufhl")
+
+[connection signal="pressed" from="Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="Hard" to="Hard" method="_on_pressed"]
+[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Easy" to="Easy" method="_on_pressed"]
+[connection signal="pressed" from="Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="Medium" to="Medium" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]

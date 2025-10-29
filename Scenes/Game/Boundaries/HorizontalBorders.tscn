@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://begd2qw6hdosa"]
+
+[ext_resource type="Script" uid="uid://bk7vhyy45ikk8" path="res://Scenes/Game/Boundaries/HorizontalBorders.gd" id="1_x6v8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iio78"]
+size = Vector2(1720, 50)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_x6v8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(860, 25)
+shape = SubResource("RectangleShape2D_iio78")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

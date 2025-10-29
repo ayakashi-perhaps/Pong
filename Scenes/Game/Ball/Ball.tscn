@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dych4o7n335vy"]
+
+[ext_resource type="Script" uid="uid://c5amkeeby53ah" path="res://Scenes/Game/Ball/Ball.gd" id="1_q560a"]
+[ext_resource type="Texture2D" uid="uid://cxfupys7kaxy5" path="res://Assets/PongBall.png" id="2_o4ub6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o4ub6"]
+radius = 40.0
+
+[node name="Ball" type="Area2D"]
+script = ExtResource("1_q560a")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o4ub6")
+
+[node name="PongBall" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_o4ub6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy6eabq4n5j1m"]
+
+[ext_resource type="Script" uid="uid://cmlrg8w35e6nf" path="res://Scenes/TitleScreen/StartButton/StartButton.gd" id="1_nv3ds"]
+
+[node name="StartButton" type="Node2D"]
+script = ExtResource("1_nv3ds")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 760.0
+offset_top = 550.0
+offset_right = 1160.0
+offset_bottom = 650.0
+text = "Start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

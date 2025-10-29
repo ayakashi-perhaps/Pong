@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk1p3jhoguhku"]
+
+[ext_resource type="Script" uid="uid://basx66r8xdray" path="res://Scenes/TitleScreen/TitleScreen.gd" id="1_4gxqj"]
+[ext_resource type="Texture2D" uid="uid://dr58cl37hxi5d" path="res://Assets/klein's_utopia.jpg" id="1_p3fck"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_4gxqj")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Klein\'sUtopia" type="Sprite2D" parent="Background"]
+position = Vector2(960.0001, 596.74994)
+scale = Vector2(0.12419951, 0.15900663)
+texture = ExtResource("1_p3fck")

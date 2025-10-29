@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ikvjobag0w5"]
+
+[ext_resource type="Script" uid="uid://dqfqmdc0jrsw" path="res://Scenes/Game/Boundaries/VerticalBorders.gd" id="1_m3dwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7uqb"]
+size = Vector2(99, 1000)
+
+[node name="VertBorders" type="Area2D"]
+script = ExtResource("1_m3dwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50.5, 500)
+shape = SubResource("RectangleShape2D_q7uqb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
