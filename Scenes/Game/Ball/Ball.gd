@@ -1,9 +1,10 @@
 extends Area2D
 
 class_name Ball
+signal PastMiddle
 
 var Vx = 300
-var Vy:int = Vx
+var Vy:int = -1 * Vx
 
 func reset():
 	position.x = 960
@@ -22,3 +23,11 @@ func ReverseVel(option:int) -> void:
 		Vy = -Vy
 	else:
 		Vx = -Vx
+		
+
+
+
+func _on_area_entered(_area: MiddleLine) -> void:
+	if Vx > 0:
+		print("Past Middle")
+		PastMiddle.emit(position,Vx,Vy)

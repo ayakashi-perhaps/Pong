@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvnotmeax6iuf"]
+[gd_scene load_steps=11 format=3 uid="uid://cvnotmeax6iuf"]
 
 [ext_resource type="Script" uid="uid://b4b63wfkc8h7h" path="res://Scenes/Game/Game.gd" id="1_gwu2e"]
 [ext_resource type="Texture2D" uid="uid://c7cdwyr66mro4" path="res://Assets/Table.png" id="1_rdw05"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://begd2qw6hdosa" path="res://Scenes/Game/Boundaries/HorizontalBorders.tscn" id="6_3k6gv"]
 [ext_resource type="PackedScene" uid="uid://dych4o7n335vy" path="res://Scenes/Game/Ball/Ball.tscn" id="7_1q8bt"]
 [ext_resource type="PackedScene" uid="uid://d2ikvjobag0w5" path="res://Scenes/Game/Boundaries/VerticalBorders.tscn" id="8_gvja8"]
+[ext_resource type="Script" uid="uid://crrefobvnjvaa" path="res://Scenes/Game/MiddleLine.gd" id="9_m1o7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3586x"]
+size = Vector2(2, 900)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_gwu2e")
@@ -41,3 +45,12 @@ position = Vector2(0, 100)
 
 [node name="VertBorders" parent="." instance=ExtResource("8_gvja8")]
 position = Vector2(1819, 100)
+
+[node name="Middle" type="Area2D" parent="."]
+script = ExtResource("9_m1o7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Middle"]
+position = Vector2(960, 600)
+shape = SubResource("RectangleShape2D_3586x")
+
+[connection signal="PastMiddle" from="Ball" to="AI" method="_on_ball_past_middle"]
